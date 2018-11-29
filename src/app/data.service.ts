@@ -105,4 +105,16 @@ export class DataService {
   getMessages(selectedUser : string){
     return this.db.list('/'+this.authService.customName(this.authService.currentUserName)+'/'+selectedUser+'/messages').valueChanges()
   }
+
+  login(email : string, password: string){
+    this.email = email
+    this.password = password
+    this.onLoginEmail()
+  }
+
+  register(email:string , password:string){
+    this.email = email
+    this.password = password
+    this.onSignUp()
+  }
 }
