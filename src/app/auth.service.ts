@@ -26,10 +26,10 @@ export class AuthService {
     return this.authState['email']
   }
 
-  get customUserName() : string {
+  customName(currentUserName : string) : string {
     var capitalize = false
     var data = ''
-    for (let char of this.currentUserName){
+    for (let char of currentUserName){
       if (char == '@' || char == '.'){
         capitalize = true
         continue
